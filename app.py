@@ -1,9 +1,13 @@
 import os
 import streamlit as st
 import requests
+from dotenv import load_dotenv
 
-# ✅ Direct API Key (replacing dotenv)
-GROQ_API_KEY = "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"  # Directly replace your API key here
+# ✅ Load environment variables
+load_dotenv()
+
+# ✅ Groq API Key
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # ✅ Function to interact with Groq API
 def ask_groq(chat_history):
